@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NebulaConvert | AI-Powered Video to Shorts Converter</title>
+    <meta name="description" content="Transform your videos into stunning shorts with NebulaConvert's quantum-powered processing. The most advanced online video converter in the galaxy.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Cosmic Color Palette */
+        :root {
+            --neon-blue: #00f0ff;
+            --quantum-purple: #9d00ff;
+            --starlight-pink: #ff00f0;
+            --deep-space: #0a0e23;
+            --cosmic-gray: #1a1f35;
+            --void-black: #050811;
+            --white-hole: #e0f8ff;
+            --success: #00ffaa;
+            --warning: #ffaa00;
+            --error: #ff0066;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Orbitron';
+            src: url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+        }
+
+        body {
+            font-family: 'Orbitron', 'Segoe UI', sans-serif;
+            background-color: var(--void-black);
+            color: var(--white-hole);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(157, 0, 255, 0.1) 0%, transparent 25%),
+                url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=3000&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--starlight-pink);
+            text-shadow: 0 0 10px rgba(255, 0, 240, 0.7);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Glowing Button Style */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-blue), var(--quantum-purple));
+            color: var(--void-black);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--starlight-pink), var(--quantum-purple));
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            color: var(--void-black);
+        }
+
+        /* Header - Cosmic Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(10, 14, 35, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--neon-blue), var(--starlight-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 40px;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--white-hole);
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white-hole);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section - Cosmic Gateway */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 240, 255, 0.1) 0%, rgba(5, 8, 17, 0.9) 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, var(--neon-blue), var(--starlight-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: rgba(224, 248, 255, 0.9);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        /* Floating Tech Elements */
+        .tech-element {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .tech-element::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            border: 1px dashed rgba(0, 240, 255, 0.2);
+        }
+
+        .element-1 {
+            width: 300px;
+            height: 300px;
+            top: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .element-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .element-3 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            left: 20%;
+            animation: float 5s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Features Grid - Cosmic Showcase */
+        .features {
+            padding: 120px 0;
+            position: relative;
+            background: rgba(5, 8, 17, 0.7);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--neon-blue), var(--white-hole));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: rgba(224, 248, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(26, 31, 53, 0.6);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                transparent, 
+                rgba(0, 240, 255, 0.1) 45%, 
+                transparent 55%
+            );
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.3);
+            border-color: var(--neon-blue);
+        }
+
+        .feature-card:hover::before {
+            animation: shine 1.5s;
+        }
+
+        @keyframes shine {
+            0% { opacity: 0; left: -50%; }
+            50% { opacity: 1; }
+            100% { opacity: 0; left: 150%; }
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--white-hole);
+        }
+
+        .feature-desc {
+            color: rgba(224, 248, 255, 0.7);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* How It Works - Cosmic Steps */
+        .how-it-works {
+            padding: 120px 0;
+            background: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=3000&auto=format&fit=crop') center/cover no-repeat;
+            position: relative;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 8, 17, 0.85);
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 40px;
+            width: 4px;
+            background: linear-gradient(transparent, var(--neon-blue), transparent);
+            z-index: 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--quantum-purple));
+            color: var(--void-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+        }
+
+        .step-content {
+            background: rgba(26, 31, 53, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            flex-grow: 1;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+        }
+
+        .step-content:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+        }
+
+        .step-desc {
+            color: rgba(224, 248, 255, 0.8);
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* CTA Section - Cosmic Call */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(157, 0, 255, 0.1));
+        }
+
+        .cta-title {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, var(--neon-blue), var(--starlight-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: rgba(224, 248, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* Footer - Cosmic Base */
+        footer {
+            background: linear-gradient(to bottom, rgba(10, 14, 35, 0.9), rgba(5, 8, 17, 1));
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--starlight-pink));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: linear-gradient(to right, var(--neon-blue), var(--starlight-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-about p {
+            color: rgba(224, 248, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white-hole);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .footer-social a:hover {
+            background: linear-gradient(135deg, var(--neon-blue), var(--quantum-purple));
+            color: var(--void-black);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            border-color: transparent;
+        }
+
+        .footer-links h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--white-hole);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), transparent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(224, 248, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+            color: var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-blue);
+            padding-left: 5px;
+        }
+
+        .footer-links a:hover i {
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+            color: rgba(224, 248, 255, 0.5);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design - Cosmic Adaptability */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(5, 8, 17, 0.95);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 120px 40px;
+                transition: all 0.5s ease;
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                border-right: 1px solid rgba(0, 240, 255, 0.2);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .hero {
+                min-height: 700px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 20px;
+            }
+            
+            .steps::before {
+                left: 40px;
+                height: calc(100% - 120px);
+                top: 90px;
+            }
+            
+            .element-1, .element-2, .element-3 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Tech Elements -->
+    <div class="tech-element element-1"></div>
+    <div class="tech-element element-2"></div>
+    <div class="tech-element element-3"></div>
+
+    <!-- Cosmic Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-satellite-dish"></i>
+                    NebulaConvert
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#features"><i class="fas fa-stars"></i> Features</a></li>
+                    <li><a href="#how-it-works"><i class="fas fa-cogs"></i> How It Works</a></li>
+                    <li><a href="#pricing"><i class="fas fa-coins"></i> Pricing</a></li>
+                    <li><a href="#contact"><i class="fas fa-comments"></i> Contact</a></li>
+                    <li><a href="#" class="btn btn-outline"><i class="fas fa-user-astronaut"></i> Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - Cosmic Gateway -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Quantum-Powered Video Conversion</h1>
+            <p class="hero-subtitle">Harness the power of quantum computing to transform your videos into stunning shorts with NebulaConvert's revolutionary AI technology. Perfect for TikTok, Instagram Reels, and YouTube Shorts across the galaxy.</p>
+            <div class="hero-buttons">
+                <a href="#converter" class="btn"><i class="fas fa-bolt"></i> Start Converting Now</a>
+                <a href="#how-it-works" class="btn btn-outline"><i class="fas fa-play-circle"></i> Watch Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section - Cosmic Showcase -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Stellar Features</h2>
+                <p class="section-subtitle">Experience the next generation of video conversion technology with our cosmic-powered features</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="feature-title">Quantum Processing</h3>
+                    <p class="feature-desc">Our quantum algorithms process videos at speeds previously thought impossible, delivering results in seconds.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">AI Enhancement</h3>
+                    <p class="feature-desc">Neural networks analyze and enhance every frame for perfect clarity and engagement.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Galactic Security</h3>
+                    <p class="feature-desc">Military-grade encryption ensures your content is protected across the cosmos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="feature-title">Unlimited Formats</h3>
+                    <p class="feature-desc">From ancient Earth formats to futuristic holograms, we handle them all with ease.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="feature-title">Auto-Magic Editing</h3>
+                    <p class="feature-desc">Our AI predicts your editing needs before you even think of them.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="feature-title">Lightning Speed</h3>
+                    <p class="feature-desc">Faster-than-light processing means you'll never wait for renders again.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works - Cosmic Steps -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cosmic Conversion</h2>
+                <p class="section-subtitle">Transform your videos in just 3 simple steps with our quantum-powered platform</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Upload Your Video</h3>
+                        <p class="step-desc">Simply drag and drop your video file into our quantum upload portal. Our system supports all known video formats from across the galaxy, with automatic format detection and optimization.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">AI Processing</h3>
+                        <p class="step-desc">Our neural networks analyze your content frame-by-frame, applying intelligent enhancements, stabilization, and format optimization to create the perfect short-form video.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Download & Share</h3>
+                        <p class="step-desc">Instantly download your perfected video or share directly to all major social platforms via our quantum entanglement delivery network (just kidding, but it's really fast!).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section - Cosmic Call -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Videos?</h2>
+            <p class="cta-subtitle">Join thousands of creators across the galaxy who are already using NebulaConvert to create stunning short-form content with zero effort.</p>
+            <a href="#converter" class="btn"><i class="fas fa-rocket"></i> Launch Converter</a>
+        </div>
+    </section>
+
+    <!-- Footer - Cosmic Base -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-satellite-dish"></i> NebulaConvert
+                    </a>
+                    <p>The most advanced quantum-powered video conversion platform in the known universe. Transforming your content since 3023.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> API Docs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Status</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> GDPR</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 3023 NebulaConvert Technologies. All rights reserved. | Made with <i class="fas fa-heart" style="color: var(--starlight-pink);"></i> in the Andromeda Galaxy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .step-content');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.feature-card, .step-content').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Trigger once on page load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Add cosmic particle effect (conceptual)
+        const createParticle = () => {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = Math.random() * 5 + 1 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.backgroundColor = `rgba(0, 240, 255, ${Math.random() * 0.5})`;
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = Math.random() * window.innerHeight + 'px';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '0';
+            document.body.appendChild(particle);
+            
+            // Animate particle
+            let posX = parseFloat(particle.style.left);
+            let posY = parseFloat(particle.style.top);
+            const speedX = (Math.random() - 0.5) * 2;
+            const speedY = (Math.random() - 0.5) * 2;
+            
+            const animate = () => {
+                posX += speedX;
+                posY += speedY;
+                
+                if(posX < 0 || posX > window.innerWidth || posY < 0 || posY > window.innerHeight) {
+                    document.body.removeChild(particle);
+                    return;
+                }
+                
+                particle.style.left = posX + 'px';
+                particle.style.top = posY + 'px';
+                requestAnimationFrame(animate);
+            };
+            
+            requestAnimationFrame(animate);
+            
+            // Remove after random time
+            setTimeout(() => {
+                if(particle.parentNode) {
+                    document.body.removeChild(particle);
+                }
+            }, Math.random() * 10000 + 5000);
+        };
+        
+        // Create initial particles
+        for(let i = 0; i < 20; i++) {
+            setTimeout(createParticle, i * 300);
+        }
+        
+        // Continue creating particles periodically
+        setInterval(createParticle, 2000);
+    </script>
+</body>
+</html>
