@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NebulaConvert | AI-Powered Video to Shorts Converter</title>
+    
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+     crossorigin="anonymous"></script>
+    
+    <!-- Rest of your head content -->
+    <style>
+        /* Your existing CSS */
+    </style>
+</head>
+<body>
+    <!-- Header content remains the same -->
+
+    <!-- Top Ad Banner -->
+    <div class="container">
+        <div class="ad-space">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+             crossorigin="anonymous"></script>
+            <!-- Leaderboard -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_LEADERBOARD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Hero section remains the same -->
+
+    <!-- Middle Ad Rectangle -->
+    <div class="container">
+        <div class="ad-space" style="margin: 40px auto;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+             crossorigin="anonymous"></script>
+            <!-- Medium Rectangle -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_RECTANGLE_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Features section remains the same -->
+
+    <!-- In-Content Ad -->
+    <div class="container">
+        <div class="ad-space" style="margin: 60px auto;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+             crossorigin="anonymous"></script>
+            <!-- In-Article -->
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_INARTICLE_SLOT"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- How It Works section remains the same -->
+
+    <!-- Bottom Ad Banner -->
+    <div class="container">
+        <div class="ad-space">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+             crossorigin="anonymous"></script>
+            <!-- Footer Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_FOOTER_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Footer remains the same -->
+
+    <!-- Sticky Bottom Ad (Mobile) -->
+    <div class="mobile-ad-container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+         crossorigin="anonymous"></script>
+        <!-- Anchor Ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_ANCHOR_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <style>
+        /* Add this to your existing CSS */
+        .ad-space {
+            background: rgba(10, 14, 35, 0.7);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-ad-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 35, 0.9);
+            padding: 10px;
+            z-index: 1000;
+            display: none;
+            border-top: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-ad-container {
+                display: block;
+            }
+        }
+    </style>
+
+    <script>
+        // Your existing JavaScript
+    </script>
+</body>
+</html>
