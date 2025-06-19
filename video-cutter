@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online video converter tool - Convert and edit videos to shorts format quickly and easily. Supports MP4, MOV, AVI, and more.">
+    <meta name="keywords" content="video converter, video editor, shorts creator, online video tool, free video converter">
+    <meta name="author" content="VideoConverterPro">
+    <meta property="og:title" content="VideoConverterPro - Free Online Video Converter">
+    <meta property="og:description" content="Convert and edit videos to shorts format with our free online tool">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://videoconverterpro.example.com">
+    <title>VideoConverterPro - Free Online Video to Shorts Converter</title>
+    <link rel="canonical" href="https://videoconverterpro.example.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4bb543;
+            --warning-color: #f0ad4e;
+            --danger-color: #d9534f;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f7fa;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Ad Space */
+        .ad-space {
+            background-color: #f1f3f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            border: 1px dashed #adb5bd;
+        }
+
+        .ad-space p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Video Converter Tool */
+        .converter-tool {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .upload-area {
+            border: 2px dashed #ced4da;
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .upload-hint {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .file-info {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+        }
+
+        .file-info.show {
+            display: block;
+        }
+
+        .file-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .file-size {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Editor Controls */
+        .editor-controls {
+            margin-top: 30px;
+        }
+
+        .control-group {
+            margin-bottom: 25px;
+        }
+
+        .control-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: #e9ecef;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .range-value {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: 500;
+        }
+
+        .format-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .format-option {
+            padding: 8px 15px;
+            background: #e9ecef;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .format-option:hover, .format-option.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .preview-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .preview-container.show {
+            display: block;
+        }
+
+        .video-preview {
+            width: 100%;
+            border-radius: var(--border-radius);
+            background-color: #000;
+            aspect-ratio: 9/16;
+            object-fit: contain;
+        }
+
+        .trim-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .trim-handle {
+            width: 12px;
+            height: 30px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            cursor: ew-resize;
+        }
+
+        .trim-range {
+            flex-grow: 1;
+            height: 6px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .trim-progress {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .feature-desc {
+            color: #6c757d;
+        }
+
+        /* How It Works */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .step-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            flex-grow: 1;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .step-desc {
+            color: #6c757d;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25px;
+            width: 4px;
+            background-color: #e9ecef;
+            z-index: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-about {
+            max-width: 300px;
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: var(--transition);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-bottom: 15px;
+            }
+            
+            .steps::before {
+                left: 0;
+                right: 0;
+                top: 25px;
+                bottom: 25px;
+                width: auto;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>VideoConverterPro</span>
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#converter">Converter</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#" class="btn btn-outline">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Top Ad Space -->
+    <div class="container">
+        <div class="ad-space">
+            <p>Advertisement Space - 728x90</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Convert Videos to Shorts in Seconds</h1>
+            <p class="hero-subtitle">Free online tool to edit and convert your videos to perfect vertical shorts for TikTok, Instagram, YouTube and more.</p>
+            <a href="#converter" class="btn">Start Converting Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Video Converter Tool -->
+        <section class="section" id="converter">
+            <h2 class="section-title">Video to Shorts Converter</h2>
+            <p class="section-subtitle">Upload your video, edit it to perfect vertical format, and download as shorts-ready video</p>
+            
+            <div class="converter-tool">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 class="upload-text">Drag & Drop Your Video Here</h3>
+                    <p class="upload-hint">or click to browse files (MP4, MOV, AVI, MKV up to 500MB)</p>
+                    <input type="file" id="fileInput" accept="video/*" style="display: none;">
+                </div>
+                
+                <div class="file-info" id="fileInfo">
+                    <div class="file-name" id="fileName">video.mp4</div>
+                    <div class="file-size" id="fileSize">125.4 MB</div>
+                </div>
+                
+                <div class="editor-controls">
+                    <div class="control-group">
+                        <label class="control-label">Output Format</label>
+                        <div class="format-options">
+                            <div class="format-option active">MP4</div>
+                            <div class="format-option">MOV</div>
+                            <div class="format-option">GIF</div>
+                            <div class="format-option">MP3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Quality <span class="range-value" id="qualityValue">High</span></label>
+                        <input type="range" min="1" max="3" value="3" class="range-slider" id="qualitySlider">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Trim Video</label>
+                        <div class="trim-controls">
+                            <div class="trim-handle" id="trimStart"></div>
+                            <div class="trim-range">
+                                <div class="trim-progress" id="trimProgress"></div>
+                            </div>
+                            <div class="trim-handle" id="trimEnd"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Crop to Shorts Format (9:16)</label>
+                        <div class="format-options">
+                            <div class="format-option active">Auto Crop</div>
+                            <div class="format-option">Manual Crop</div>
+                            <div class="format-option">No Crop</div>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-container" id="previewContainer">
+                        <h3 class="control-label">Preview</h3>
+                        <video controls class="video-preview" id="videoPreview"></video>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn" id="convertBtn">Convert to Shorts</button>
+                        <button class="btn btn-outline" id="resetBtn">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Middle Ad Space -->
+        <div class="ad-space">
+            <p>Advertisement Space - 728x90</p>
+        </div>
+        
+        <!-- Features Section -->
+        <section class="section features" id="features">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to create perfect shorts from your videos</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-crop-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Smart Cropping</h3>
+                    <p class="feature-desc">Automatically crop your videos to perfect 9:16 vertical format for shorts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="feature-title">Precision Trimming</h3>
+                    <p class="feature-desc">Cut your videos to the perfect length with our easy-to-use trimming tools.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Processing</h3>
+                    <p class="feature-desc">Our cloud-powered servers convert videos quickly without quality loss.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Mobile Optimized</h3>
+                    <p class="feature-desc">Works perfectly on all devices - desktop, tablet, and mobile phones.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Secure Processing</h3>
+                    <p class="feature-desc">Your videos are processed securely and deleted automatically after conversion.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">100% Free</h3>
+                    <p class="feature-desc">No watermarks, no subscriptions - completely free with no hidden costs.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section class="section" id="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Convert your videos to shorts in just 3 simple steps</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Upload Your Video</h3>
+                        <p class="step-desc">Drag and drop your video file or click to browse. We support MP4, MOV, AVI, MKV and most other video formats.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Edit & Customize</h3>
+                        <p class="step-desc">Crop to vertical format, trim to desired length, adjust quality settings and preview your short before converting.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Download & Share</h3>
+                        <p class="step-desc">Download your converted short video in perfect format for TikTok, Instagram Reels, YouTube Shorts or other platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Bottom Ad Space -->
+    <div class="container">
+        <div class="ad-space">
+            <p>Advertisement Space - 728x90</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-video"></i> VideoConverterPro
+                    </a>
+                    <p>Free online video converter tool to create perfect shorts from your videos. No registration required.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#converter">Video Converter</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Report Issue</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Popular Tools</h3>
+                    <ul>
+                        <li><a href="#">MP4 to Shorts</a></li>
+                        <li><a href="#">MOV to MP4</a></li>
+                        <li><a href="#">Video Compressor</a></li>
+                        <li><a href="#">Video to GIF</a></li>
+                        <li><a href="#">Video to MP3</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 VideoConverterPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // File Upload Handling
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const previewContainer = document.getElementById('previewContainer');
+        const videoPreview = document.getElementById('videoPreview');
+        
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#4361ee';
+            uploadArea.style.backgroundColor = 'rgba(67, 97, 238, 0.05)';
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#ced4da';
+            uploadArea.style.backgroundColor = 'transparent';
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ced4da';
+            uploadArea.style.backgroundColor = 'transparent';
+            
+            if (e.dataTransfer.files.length) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+        
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length) {
+                handleFile(fileInput.files[0]);
+            }
+        });
+        
+        function handleFile(file) {
+            // Validate file type
+            const validTypes = ['video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/x-matroska'];
+            if (!validTypes.includes(file.type)) {
+                alert('Please upload a valid video file (MP4, MOV, AVI, MKV)');
+                return;
+            }
+            
+            // Validate file size (500MB max)
+            if (file.size > 500 * 1024 * 1024) {
+                alert('File size exceeds 500MB limit');
+                return;
+            }
+            
+            // Display file info
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+            fileInfo.classList.add('show');
+            
+            // Show preview
+            const videoURL = URL.createObjectURL(file);
+            videoPreview.src = videoURL;
+            previewContainer.classList.add('show');
+            
+            // Reset trim controls
+            document.getElementById('trimProgress').style.width = '100%';
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' bytes';
+            else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            else return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+        
+        // Quality Slider
+        const qualitySlider = document.getElementById('qualitySlider');
+        const qualityValue = document.getElementById('qualityValue');
+        
+        qualitySlider.addEventListener('input', () => {
+            const qualities = ['Low', 'Medium', 'High'];
+            qualityValue.textContent = qualities[qualitySlider.value - 1];
+        });
+        
+        // Format Options
+        const formatOptions = document.querySelectorAll('.format-option');
+        formatOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                formatOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+        
+        // Convert Button
+        const convertBtn = document.getElementById('convertBtn');
+        convertBtn.addEventListener('click', () => {
+            if (!fileInput.files.length && !videoPreview.src) {
+                alert('Please upload a video file first');
+                return;
+            }
+            
+            // Simulate conversion process
+            convertBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Converting...';
+            convertBtn.disabled = true;
+            
+            setTimeout(() => {
+                convertBtn.innerHTML = '<i class="fas fa-check"></i> Conversion Complete!';
+                
+                // Simulate download
+                setTimeout(() => {
+                    alert('Your converted short video is ready to download!');
+                    convertBtn.innerHTML = 'Convert to Shorts';
+                    convertBtn.disabled = false;
+                }, 1000);
+            }, 3000);
+        });
+        
+        // Reset Button
+        const resetBtn = document.getElementById('resetBtn');
+        resetBtn.addEventListener('click', () => {
+            fileInput.value = '';
+            fileInfo.classList.remove('show');
+            previewContainer.classList.remove('show');
+            videoPreview.src = '';
+            qualitySlider.value = 3;
+            qualityValue.textContent = 'High';
+            
+            // Reset active format option to MP4
+            formatOptions.forEach(opt => opt.classList.remove('active'));
+            formatOptions[0].classList.add('active');
+            
+            // Reset trim controls
+            document.getElementById('trimProgress').style.width = '100%';
+        });
+        
+        // Simple trim controls (visual only for this demo)
+        const trimStart = document.getElementById('trimStart');
+        const trimEnd = document.getElementById('trimEnd');
+        const trimProgress = document.getElementById('trimProgress');
+        
+        let isDragging = false;
+        let activeHandle = null;
+        
+        trimStart.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            activeHandle = 'start';
+            e.preventDefault();
+        });
+        
+        trimEnd.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            activeHandle = 'end';
+            e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const trimRange = trimProgress.parentElement;
+            const rect = trimRange.getBoundingClientRect();
+            let position = (e.clientX - rect.left) / rect.width;
+            position = Math.max(0, Math.min(1, position));
+            
+            if (activeHandle === 'start') {
+                const currentEnd = parseFloat(trimProgress.style.width || '100') / 100;
+                position = Math.min(position, currentEnd - 0.05);
+                trimProgress.style.left = (position * 100) + '%';
+                trimProgress.style.width = ((currentEnd - position) * 100) + '%';
+            } else if (activeHandle === 'end') {
+                const currentStart = parseFloat(trimProgress.style.left || '0') / 100;
+                position = Math.max(position, currentStart + 0.05);
+                trimProgress.style.width = ((position - currentStart) * 100) + '%';
+            }
+        });
+        
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            activeHandle = null;
+        });
+    </script>
+</body>
+</html>
